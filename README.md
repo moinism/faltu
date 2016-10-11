@@ -1,4 +1,6 @@
 
+[![travis-ci](https://api.travis-ci.org/moinism/faltu.svg?branch=master)](https://travis-ci.org/moinism/faltu)
+[![Coverage Status](https://coveralls.io/repos/github/moinism/faltu/badge.svg?branch=master)](https://coveralls.io/github/moinism/faltu?branch=master)
 [![npm version](https://badge.fury.io/js/faltu.svg)](https://badge.fury.io/js/faltu)
 [![License](https://img.shields.io/badge/license-MIT%20License-blue.svg?style=flat)](https://github.com/moinism/faltu/blob/master/LICENSE)
 
