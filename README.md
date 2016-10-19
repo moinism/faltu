@@ -32,7 +32,7 @@ All the data passed is expected to be an array or objects.
 
 e.g:
 ````
-[record, record, ..., record]
+[array, array, ..., array]
 ````
 
 All the data returned is also of the same type.
@@ -61,6 +61,12 @@ var Faltu = require('faltu');
 var faltuData = new Faltu(data);
 ````
 
+In other environments:
+
+````javascript
+var faltuData = new Faltu(data);
+````
+
 
 ### Searching
 
@@ -81,6 +87,9 @@ var newData = new Faltu(data).find({
   age: 18
 }]
 ```
+
+You should always call `get` at the end if you want an array back. Or It'll just return the `faltu` instance.
+
 
 Search for all the guys who are 18 years of age or older:
 
@@ -131,7 +140,25 @@ var newData = new Faltu(data).find({
 }]
 ```
 
-Passing `null`, empty object `{}` or nothing to `find` means not performing any search.
+Passing `null`, empty object `{}` or nothing to `find` means not performing any search. `find` accepts options as second argument.
+
+e.g:
+
+```javascript
+var newData = new Faltu(data).find({
+  age: [16, 18]
+}, {
+  sort: {
+    age: -1
+  }
+}).get();
+```
+
+Will return the data in descending order by `age`. Other than `sort` you can also pass:
+
+- `skip`
+- `limit`
+- `unique`
 
 
 ### Sorting
@@ -213,6 +240,16 @@ var newData = new Faltu(data).find().skip(1).limit(1).get();
   age: 18
 }]
 ```
+
+
+### Unique
+
+You can have result returned that is unique by a key.
+
+```javascript
+var newData = new Faltu(data).find().unique('age').get();
+```
+
 
 ### Filtering
 
